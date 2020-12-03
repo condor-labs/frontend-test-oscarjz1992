@@ -1,0 +1,38 @@
+@import '../../../assets/styles/config/colors.styl'
+@import '../../../assets/styles/general.styl'
+.citiesRecommended
+    .container-card-citie
+        height 260px
+        width 200px
+        border-radius 25px
+        padding 20px
+        margin-right 25px
+        background-size cover
+        background-size cover
+        background-position-x center
+        transition transform .4s
+        &:hover
+            transform scale(1.1)
+        .text-card
+            span
+                font-size 20px
+        .container-card-button
+            display flex
+            justify-content center
+            background $color_dark_violet
+            margin-top 155px
+            border-radius 50px
+            cursor pointer
+            padding 8px
+            color #fff
+            &:hover
+                background #fff
+                .text-button-card a
+                    color $color_dark_violet
+            .text-button-card
+                font-size 13px
+                letter-spacing 2px
+                a
+                    color #fff
+                    text-decoration none
+            

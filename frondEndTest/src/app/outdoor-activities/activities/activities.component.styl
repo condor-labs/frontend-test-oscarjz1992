@@ -1,0 +1,56 @@
+@import '../../../assets/styles/config/colors.styl'
+@import '../../../assets/styles/general.styl'
+.activities
+    font-family "Lato"
+    .container-loader
+        text-align center
+        height 100%
+        position absolute
+        width 100%
+        top 0
+        display block
+        padding-top calc(20%)
+        background #ffffff9c
+        z-index 5
+        color blue
+    .shadowTextWeather
+        text-shadow 1px 2px 3px #6f6f6f
+    .icon-weather
+        font-size 105px
+        color $color_light_blue
+        position absolute
+        right 40px
+        top 50px
+    .container-general--days
+        background #000
+        padding 50px 50px 30px 40px
+        border-radius 20px
+        .widget-headquarter
+            background $color_dark_violet
+            width 120px
+            text-align center
+            border-radius 50px
+            color #fff
+            text-transform uppercase
+            font-size 14px
+            padding 4px
+        .widget-icon
+            font-size 20px
+            vertical-align middle
+        .degrees
+            margin-top 100px
+            h1
+                font-size 60px
+        .container-data-degrees--small
+            display flex
+            flex-direction row
+            .data-degrees-small--text
+                font-size 12px
+            .mat-icon
+                font-size 12px
+            .data-degrees-small--icon_pink
+                .mat-icon
+                    color $color_pink
+            .data-degrees-small--icon_blue_light
+                .mat-icon
+                    color $color_light_blue

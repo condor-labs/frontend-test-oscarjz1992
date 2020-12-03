@@ -1,0 +1,41 @@
+<main class="forecast">
+    <section class="forecast-container-carousel bg-white m-4">
+        <div class="d-flex justify-content-between">
+            <div class="container-title-carousel">
+                <span class="text-uppercase">FORECAST EXTENDED - {{forecastCopy.city.name}}</span>
+            </div>
+            <div class="d-flex carousel-buttons">
+                <div [ngClass]="{'disabledButtonCarousel': isDisabledPrevButton}" class="button-actions-carousel" (click)="newPageSlider()">
+                    <mat-icon>west</mat-icon>
+                </div>
+                <div [ngClass]="{'disabledButtonCarousel': isDisabledNextButton}" class="ml-3 button-actions-carousel" (click)="newPageSlider()">
+                    <mat-icon>east</mat-icon>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-between mt-3">
+            <div id="widget-carousel" class="flex-column widget-carousel-item border-right pr-4" *ngFor="let fore of forecast.list">
+                <div class="widget-day mt-2">
+                    <span class="font-weight-bold">{{fore.date}}</span>
+                </div>
+                <div class="mb-2 mt-1">
+                    <span class="degreees-carousel">{{fore.main.temp}} ° C</span>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                    <div>
+                        <app-icon-small-rounded [colorIcon]="'color_light_blue'"></app-icon-small-rounded>
+                    </div>
+                    <div class="text-data-carousel">
+                        <span>{{fore.main.humidity}} %</span>
+                    </div>
+                    <div class="ml-3">
+                        <app-icon-small-rounded [colorIcon]="'color_pink'"></app-icon-small-rounded>
+                    </div>
+                    <div class="text-data-carousel">
+                        <span>{{fore.wind.speed}} m/s</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
