@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import * as moment from 'moment';
+import { environment } from '../../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +11,7 @@ export class HomeServiceService {
   constructor(private http: HttpClient) { }
 
   /** BASE DE CONSUMO DE ENDPOINTS */
-  baseUrl: string = "https://run.mocky.io/v3/"
+  baseUrl: string = environment.BASE_URL
   
   public getData(service: string): Observable <any>{
     /** VALIDATE 1 - (SEDES) RETORNA TODAS LAS SEDES EXISTENTES */
