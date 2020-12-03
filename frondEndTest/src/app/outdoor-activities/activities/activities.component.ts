@@ -17,12 +17,12 @@ export class ActivitiesComponent implements OnInit {
   headQuartesSuggested: any;
   citiesRecommendedFilter: any[];
   ngOnInit(): void {
-    this.getPronostico()
+    
     this.getSedes()
     this.getCiudades()
   }
   
-  /** RETORNA TODAS LAS SEDES EXISTENTES */
+  /** RETURN VENUS EXISTENTS */
   public  getSedes(){
     this.loading = true
     this.homeService.getData("Sedes").subscribe(response =>{
@@ -33,14 +33,14 @@ export class ActivitiesComponent implements OnInit {
         this.headquarters.main.temp = this.homeService.convertDegrees(this.headquarters.main.temp)
         this.favoritePlaces = this.venues.places.filter(venue => !venue.main_headquarter)
         this.headQuartesSuggested = this.venues.places.find(venue => venue.name === 'Cartagena')
-        this.getForecastSuggested()
+        this.getPronostico()
       }
       console.group("Sedes")
       console.log(response)
     })
   }
 
-  /** RETORNA TODOS LOS PRONOSTICOS */
+  /** RETURN ALL FORECASTS */
   public getPronostico(){
     this.loading = true
     this.homeService.getData("Pronostico").subscribe(response =>{
@@ -48,11 +48,14 @@ export class ActivitiesComponent implements OnInit {
       console.group("Pronostico")
       console.log(response)
       this.forecasts = response
+      setTimeout(() => {
+        this.getForecastSuggested()
+      }, 1000)
     })
     
   }
 
-  /** RETORNA TODAS LAS CIUDADES EXISTENTES */
+  /** RETURN ALL CITIES */
   public getCiudades(){
     this.loading = true
     this.homeService.getData("Ciudad").subscribe(response =>{
