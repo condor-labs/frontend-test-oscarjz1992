@@ -1,0 +1,35 @@
+<main id="widget4" class="head-quarter-suggested p-4">
+    <article class="flex-column container-card-headquarter" id="widget-suggest">
+        <div class="ml-auto widget-icon">
+            <i class="wi" [ngClass]="{'wi-hot icon-yellow': head_quarter_suggested.weather[0].icon === 'hot'}"></i>
+        </div>
+        <div class="d-flex widget-headquarter">
+            <div>
+                <mat-icon preffix aria-hidden="false">location_on</mat-icon>
+                <span class="text-uppercase">{{head_quarter_suggested.nameCountry}}</span>
+            </div>
+        </div>
+        <div class="d-flex mt-2">
+            <div>
+                <h1>{{head_quarter_suggested.main.temp}} ° C</h1>
+            </div>
+        </div>
+        <div class="d-flex container-card--footer-left align-items-center">
+            <div>
+                <app-icon-small-rounded [colorIcon]="'color_pink'"></app-icon-small-rounded>
+            </div>
+            <div class="text-head_quarter_suggested">
+                <span>{{head_quarter_suggested.main.humidity}}%</span>
+            </div>
+            <div class="ml-2">
+                <app-icon-small-rounded [colorIcon]="'color_light_blue'"></app-icon-small-rounded>
+            </div>
+            <div class="text-head_quarter_suggested">
+                <span>{{head_quarter_suggested.wind.speed}} m/s</span>
+            </div>
+            <div class="ml-auto">
+                <span class="text-uppercase">{{head_quarter_suggested.date}}</span>
+            </div>
+        </div>
+    </article>
+</main>

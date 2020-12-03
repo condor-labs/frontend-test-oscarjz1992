@@ -1,0 +1,55 @@
+@import '../../../assets/styles/config/colors.styl'
+.forecast
+    .forecast-container-carousel
+        padding 30px
+        border-radius 30px
+        width 50%
+        box-shadow 0px 3px 3px 0px $color_grey_white
+        .container-title-carousel
+            span
+                color $color_violet
+        .widget-carousel-item
+            min-width 190px
+            text-align center
+        .widget-day
+            color $color_dark_grey
+        .widget-carousel-item:last-child
+            border none !important
+        .degreees-carousel
+            font-size 30px
+        .text-data-carousel
+            font-size 12px
+        .text-data-carousel, .degreees-carousel
+            color $color_light_grey
+        .button-actions-carousel
+            border-radius 50px
+            background #fff
+            border 1px solid $color_violet
+            width 30px
+            height 30px
+            text-align center
+            cursor pointer
+            &:hover
+                background $color_dark_violet
+            .mat-icon
+                line-height 1.2
+                vertical-align middle
+                font-size 20px
+                color $color_violet
+                &:hover
+                    color #fff
+        .icon-wind-carousel, .icon-humedity-carousel
+            font-size 12px
+        .disabledButtonCarousel
+            background #dadada
+            border none
+            &:hover
+                background #dadada
+                cursor no-drop
+                .mat-icon
+                    color $color_violet
+        .icon-humedity-carousel
+            color $color_light_blue
+        .icon-wind-carousel
+            color $color_pink
+            

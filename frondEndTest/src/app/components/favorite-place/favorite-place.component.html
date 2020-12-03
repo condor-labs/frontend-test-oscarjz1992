@@ -1,0 +1,48 @@
+<main class="favorite_places general">
+    <article id="widget-favorite" class="d-flex p-4">
+        <div class="d-flex widget-card bg-white mr-5 p-4" *ngFor="let fav_place of places_favorite">
+            <div class="img-city">
+                <img class="rounded-circle" [src]="fav_place.image">
+            </div>
+            <div class="flex-column widget-headquarter-name">
+                <div class="d-flex">
+                    <div>
+                        <mat-icon>location_on</mat-icon>
+                    </div>
+                    <div>
+                        <span class="font-weight-bold text-uppercase">{{fav_place.name}}</span>
+                    </div>
+                </div>
+                <div class="text-description pl-2">
+                    <span>{{fav_place.description}}</span>
+                </div>
+                <div class="d-flex mt-3 widget-headquarter-degrees align-items-center">
+                    <div class="ml-2">
+                        <app-icon-small-rounded [colorIcon]="'color_yellow'"></app-icon-small-rounded>
+                    </div>
+                    <div class="text-data">
+                        <span>{{fav_place.main.temp}} ° C</span>
+                    </div>
+                    <div class="ml-2">
+                        <app-icon-small-rounded [colorIcon]="'color_light_blue'"></app-icon-small-rounded>
+                    </div>
+                    <div class="text-data">
+                        <span>{{fav_place.main.humidity}} %</span>
+                    </div>
+                    <div class="ml-3">
+                        <app-icon-small-rounded [colorIcon]="'color_pink'"></app-icon-small-rounded>
+                    </div>
+                    <div class="text-data">
+                        <span>{{fav_place.wind.speed}} m/s</span>
+                    </div>
+                </div>
+            </div>
+            <div class="container-icon ml-3">
+                <div class="container-icon-weather">
+                    <i class="wi wi-snow icon-cloudy icon-weather-rain" *ngIf="fav_place.icon === 'cloudy'"></i>
+                    <i class="wi wi-snow icon-rain icon-weather-rain" *ngIf="fav_place.icon === 'rain'"></i>
+                </div>
+            </div>
+        </div>
+    </article>
+</main>

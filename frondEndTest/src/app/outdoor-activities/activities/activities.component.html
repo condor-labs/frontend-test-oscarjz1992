@@ -1,0 +1,92 @@
+<main class="activities general">
+    <div class="container-loader" *ngIf="loading">
+        <div class="spinner-border" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <article id="widget1">
+        <section id="widget-header" *ngIf="headquarters">
+            <div class="flex-row border-rounded container-general--days m-4" [ngStyle]="{'background-image': 'url(' + headquarters.image + ')'}">
+                <div class="ml-auto">
+                    <i class="wi wi-snow icon-weather"></i>
+                </div>
+                <div class="flex-row">
+                    <div class="border-rounded widget-headquarter flex-row">
+                        <mat-icon aria-hidden="false" class="widget-icon">location_on</mat-icon>
+                        <span class="font-weight-bold">{{headquarters.name}}</span>
+                    </div>
+                </div>
+                <div class="flex-row">
+                    <div class="flex-column">
+                        <div class="flex-row degrees">
+                            <h1 class="text-white shadowTextWeather">{{headquarters.main.temp}} ° C</h1>
+                        </div>
+                        <div class="flex-row container-data-degrees--small align-items-center">
+                            <div class="data-degrees-small--icon_pink">
+                                <app-icon-small-rounded [colorIcon]="'color_light_blue'"></app-icon-small-rounded>
+                            </div>
+                            <div>
+                                <span class="text-white data-degrees-small--text shadowTextWeather">{{headquarters.main.humidity}} %</span>
+                            </div>
+                            <div class="ml-3 data-degrees-small--icon_blue_light">
+                                <app-icon-small-rounded [colorIcon]="'color_pink'"></app-icon-small-rounded>
+                            </div>
+                            <div>
+                                <span class="text-white data-degrees-small--text shadowTextWeather">{{headquarters.wind.speed}} m/s</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-row mt-3">
+                    <div class="flex-column">
+                        <div>
+                            <h1 class="text-white shadowTextWeather">Good morning,</h1>
+                        </div>
+                        <div>
+                            <h1 class="text-white font-weight-bold shadowTextWeather">Condor!</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+
+    <article id="widget2">
+        <section *ngIf="forecasts">
+            <app-forecast [forecasts]="forecasts"></app-forecast>
+        </section>
+    </article>
+
+    <article id="widget3">
+        <div class="flex-row mt-4 ml-4">
+            <h3 class="title-section-widget">
+                <strong>OUR FAVORITE</strong> PLACES
+            </h3>
+        </div>
+        <section *ngIf="favoritePlaces.length>0">
+            <app-favorite-place id="widget-favorite" [placesFavorite]="favoritePlaces"></app-favorite-place>
+        </section>
+    </article>
+
+    <article id="widget4">
+        <div class="flex-row mt-4 ml-4">
+            <h3 class="title-section-widget">
+                <strong>HEAD QUARTER</strong> SUGGESTED
+            </h3>
+        </div>
+        <section *ngIf="headQuartesSuggested">
+            <app-headquearter-suggested [headQuarterSugested]="headQuartesSuggested"></app-headquearter-suggested>
+        </section>
+    </article>
+
+    <article id="widget5">
+        <div class="flex-row mt-4 ml-4">
+            <h3 class="title-section-widget">
+                <strong>PLACE TO</strong> VISIT
+            </h3>
+        </div>
+        <section *ngIf="citiesRecommendedFilter">
+            <app-place-to-visit [citiesRecommended]="citiesRecommendedFilter"></app-place-to-visit>
+        </section>
+    </article>
+</main>

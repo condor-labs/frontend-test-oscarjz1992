@@ -1,0 +1,18 @@
+<main class="general citiesRecommended">
+    <section id="widget5" class="d-flex p-4">
+        <div class="container-card-citie" *ngFor="let citie of cities" [ngStyle]="{'background-image': 'url(' + citie.image + ')'}">
+            <div class="flex-column">
+                <div class="bd-highlight d-flex">
+                    <div class="ml-auto text-card">
+                        <span class="text-white font-weight-bold">{{citie.name}}</span>
+                    </div>
+                </div>
+                <div class="container-card-button">
+                    <div class="text-button-card" (click)="redirectPage()">
+                        <a [attr.href]="citie.uri" target="_blank">VISIT PLACE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
